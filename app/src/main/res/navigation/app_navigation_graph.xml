@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation_graph"
+    app:startDestination="@id/photosFragment">
+
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="net.android.app.flickr.presentation.fragments.photos.PhotosFragment"
+        android:label="fragment_photos"
+        tools:layout="@layout/fragment_photos" >
+        <action
+            android:id="@+id/photosFragment_to_imageViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:destination="@id/imageViewFragment" />
+        <action
+            android:id="@+id/photosFragment_to_searchFragment"
+            app:launchSingleTop="true"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:destination="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageViewFragment"
+        android:name="net.android.app.flickr.presentation.fragments.detail.ImageViewFragment"
+        android:label="fragment_image_view"
+        tools:layout="@layout/fragment_image_view" >
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="net.android.app.flickr.presentation.fragments.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/searchFragment_to_imageViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:destination="@id/imageViewFragment" />
+    </fragment>
+
+</navigation>

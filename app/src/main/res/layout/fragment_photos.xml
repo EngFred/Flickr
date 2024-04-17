@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".presentation.fragments.photos.PhotosFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/toolBar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:layout_height="60dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/search_view"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/baseline_search_24"
+                android:contentDescription="" />
+
+            <ImageView
+                android:id="@+id/more_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/baseline_more_vert_24"
+                android:contentDescription="" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/photosRV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/append_indicator_container"
+            app:layout_constraintTop_toBottomOf="@id/toolBar"/>
+
+        <ProgressBar
+            android:id="@+id/loading_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:indeterminateTint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/refresh_error_indicator_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="13dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/refresh_image_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_err"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/refresh_error_message_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Something went wrong!" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/refresh_retry_btn"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/curved_button_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/retry" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/append_indicator_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/append_error_message_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                tools:text="Unable to load more images" />
+
+            <TextView
+                android:id="@+id/append_retry_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/retry"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:background="@drawable/curved_button_shape"
+                android:textColor="@color/black"
+                android:paddingHorizontal="35dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="5dp" />
+
+            <ProgressBar
+                android:id="@+id/append_progress_bar"
+                android:visibility="gone"
+                android:layout_width="30dp"
+                android:indeterminateTint="@color/steelBlue"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/polling_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curved_text_shape"
+        android:textColor="@color/white"
+        tools:text="Stop polling"
+        android:visibility="gone"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="6dp" />
+
+</RelativeLayout>

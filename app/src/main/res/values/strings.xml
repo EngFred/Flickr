@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Flickr</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image">image</string>
+    <string name="retry">Retry</string>
+    <string name="search">Search...</string>
+    <string name="close">close</string>
+    <string name="image_not_found">Image not found!</string>
+
+    <string name="notification_channel_name">Background updates</string>
+    <string name="new_pictures_title">New Images Found</string>
+    <string name="new_pictures_text">Hei there, You have new images from Flickr.</string>
+
+    <string name="start_polling">Start polling</string>
+    <string name="stop_polling">Stop polling</string>
+    <string name="search_results_will_show_up_here">Search results\nwill show up here!</string>
+
+</resources>

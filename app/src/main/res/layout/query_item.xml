@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    tools:background="@color/black"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="13dp"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_history" />
+
+    <TextView
+        android:id="@+id/query_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        tools:text="Subaru"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_weight="1"
+        android:layout_marginEnd="14dp" />
+
+    <ImageView
+        android:id="@+id/delete_query_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:contentDescription="TODO" />
+
+
+</LinearLayout>
