@@ -1,6 +1,6 @@
 # FlickR - Daily Interesting Images Viewer
 
-FlickR is an Android application designed to fetch and display daily interesting images from the Flickr API. It provides users with a seamless experience to discover captivating images, featuring pagination for browsing convenience, robust search functionality, and an intuitive image viewer with pinch-to-zoom capability. Additionally, FlickR employs background processing to notify users of newly available interesting images, ensuring they never miss out on fresh content.
+FlickR is an Android application designed to fetch and display daily interesting images from the Flickr API. It provides users with a seamless experience to discover captivating images, featuring pagination for browsing convenience, robust search functionality, and an intuitive image viewer with pinch-to-zoom capability. Additionally, FlickR employs background processing to notify users of newly available interesting images, ensuring they never miss out on fresh content..
 
 **Features**
 
